@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.titulo{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.titulo-pagina{
+    background-color: rgb(204, 195, 195);
+    margin-bottom: 15px;
+}

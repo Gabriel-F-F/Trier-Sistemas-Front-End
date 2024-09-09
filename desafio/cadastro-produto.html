@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+    <h2>Cadastro de Produtos</h2>
+    <form action="cadastro-produto">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome">
+        </div>
+        <br>
+        <div>
+            <label for="marca">Marca</label>
+            <input type="text" name="marca">
+        </div>
+        <br>
+        <div>
+            <label for="preco">Valor Unitário</label>
+            <input type="number" name="preco">
+        </div>
+        <br>
+        <div>
+            <label for="estoque">Estoque</label>
+            <input type="number" name="estoque">
+        </div>
+        <br>
+        <div>
+            <label for="categoria-produto">Categoria</label>
+            <br>
+            <select name="categoria-produto">
+                <option value="alimenticio">Alimentício</option>
+                <option value="metalurgico">Metalúrgico</option>
+                <option value="eletronico">Eletrônico</option>
+                <option value="automotivo">Automotivo</option>
+                <option value="saude-e-beleza">Saúde e Beleza</option>
+                <option value="esporte-e-lazer">Esporte e Lazer</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+        <br>
+        <div>
+            <a href="./menu.html">Voltar para o Menu do Mercado</a>
+        </div>
+    </form>
+</body>
+</html>

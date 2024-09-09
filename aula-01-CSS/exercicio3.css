@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.titulo-pagina{
+    background-color: rgb(219, 212, 212);
+    margin-bottom: 15px;
+}
+
+.fonte-paragrafo{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.espacamento-link{
+    margin-top: 15px;
+}

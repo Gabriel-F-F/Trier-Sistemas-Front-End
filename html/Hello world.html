@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hello world</title>
+</head>
+<body>
+    <h3>Minha primeira página HTML</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus provident hic neque reiciendis explicabo illo.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus provident hic neque reiciendis explicabo illo.
+    Tempore omnis tenetur perspiciatis quidem, repellat adipisci eaque sequi ex consequuntur placeat natus! Nesciunt, dolore.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus provident hic neque reiciendis explicabo illo.
+    <strong>Tempore omnis tenetur perspiciatis quidem, repellat adipisci eaque sequi ex consequuntur placeat natus! Nesciunt, dolore.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus provident hic neque reiciendis explicabo illo.
+    Tempore omnis tenetur perspiciatis quidem, repellat adipisci eaque sequi ex consequuntur placeat natus! Nesciunt, dolore.</strong>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus provident hic neque reiciendis explicabo illo.
+    </p>
+    <a url="https://www.bing.com/ck/a?!&amp;&amp;p=0d6acae8ca200b68d0757f4a976fc3c077e467cb573f2f1162c8f3ecb3357dd3JmltdHM9MTcyNTg0MDAwMCZpbnNpZD01MjEz&amp;p
+    tn=3&amp;ver=2&amp;hsh=4&amp;fclid=27bc2356-08f0-6b0e-29d3-37eb099b6a86&amp;psq=triersistemas&amp;u=a1aHR0cDovL3d3dy50cmllcnNpc3RlbWFzLmNvbS5ici8&amp;ntb=1">
+    Link
+    </a>
+
+    <img src="file:///C:/Users/Gabriel/Desktop" alt="Imagem Teste">
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

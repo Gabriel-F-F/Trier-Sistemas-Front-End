@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cadastro de Funcionários</title>
+</head>
+<body>
+    <h3>Cadastro de Funcionários</h3>
+    <form action="cadastro-funcionarios">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome">
+        </div>
+        <br>
+        <div>
+            <label for="e-mail">E-mail</label>
+            <input type="email" name="e-mail">
+        </div>
+        <br>
+        <div>
+            <label for="idade">Idade</label>
+            <input type="number" name="idade">
+        </div>
+        <br>
+        <div>
+            <label for="estado-civil">Estado Civil</label>
+                <select name="estado-civil">
+                 <option value="SOLTEIRO">Solteiro(a)</option>
+                 <option value="CASADO(A)">Casado(a)</option>
+                  <option value="VIÚVO(A)">Viúvo(a)</option>
+                 </select>
+        </div>
+        <br>
+        <div>
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="sexo" value="masculino">
+            <label for="feminino">Feminino</label>
+            <input type="radio" name="sexo" value="feminino">
+        </div>
+        <br>
+        <div>
+        <label for="nome">Profissão</label>
+        </div>
+        <div>
+            <select name="profissao">
+                <option value="programador">Programador</option>
+                <option value="analista">Analista</option>
+                <option value="designer">Designer</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="aceitar">Li e aceito os Termos de Política de Privacidade</label>
+            <input type="checkbox" name="aceitar">
+        </div>
+            <h3>Observação</h3>
+            <label for="observacao"></label>
+        <div>
+            <textarea name="observacao" rows="4" cols="40"></textarea>
+        </div>
+        <div>
+        <button type="submit">Enviar</button>
+       </div>
+       <br>
+       <br>
+        <div>
+            <a href="./menu.html">Voltar para o Menu do Mercado</a>
+        </div>
+    </form>
+</body>
+</html>
