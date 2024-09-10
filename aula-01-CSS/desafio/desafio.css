@@ -1,6 +1,16 @@
 * {
     margin: 0px;
     padding: 0px;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        'div1 div2'
+    ;
 }
 
 .container {
@@ -10,9 +20,9 @@
 }
 
 .container-meio-pagina {
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
 }
 
 .titulo {
@@ -21,7 +31,16 @@
 }
 
 .titulo-pagina {
-    background-color: rgb(5, 93, 134);
     margin-bottom: 15px;
     color: white;
+}
+
+.div-1 {
+    grid-area: div1;
+    background-color: black;
+}
+
+.div-2 {
+    grid-area: div2;
+    background-color: rgb(59, 57, 57);
 }
