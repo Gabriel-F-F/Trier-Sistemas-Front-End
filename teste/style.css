@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    height: 100%; /* deixa o html na borda total */
+}
+/*
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ou 1fr 1fr 1fr ;
+    grid-template-rows: 45px 1fr;
+    grid-template-areas: 
+    'div1 div1 div1'
+    'div2 empty div4'
+    gap: 10px;  deixa um espaço de 10 pixeis entre as grids
+}
+*/
+.grid-container-exercicio{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    'div1 div5 div5 div2'
+    'div1 div3 div4 div2'
+    'div1 div6 div6 div2'
+    ;
+    height: 100%;
+    gap: 5px;
+}
+
+.div-1{
+    grid-area: div1;
+    background-color: rgb(80, 15, 105);
+}
+
+.div-2{
+    grid-area: div2;
+    background-color: purple;
+}
+
+.div-3{
+    grid-area: div3;
+    background-color: rgb(87, 0, 128);
+}
+
+.div-4{
+    grid-area: div4;
+    background-color: blueviolet;
+}
+
+.div-5{
+    grid-area: div5;
+    background-color: black;
+}
+
+.div-6{
+    grid-area: div6;
+    background-color: darkslateblue;
+}
