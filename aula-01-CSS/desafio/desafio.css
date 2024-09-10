@@ -1,26 +1,27 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
 
-.container{
+.container {
     border: 1px solid black;
     padding: 20px;
     margin-top: 30px;
 }
 
-.container-meio-pagina{
+.container-meio-pagina {
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
-.titulo{
+.titulo {
     font-family: monospace;
     font-weight: bold;
 }
 
-.titulo-pagina{
-    background-color: rgb(58, 183, 241);
+.titulo-pagina {
+    background-color: rgb(5, 93, 134);
     margin-bottom: 15px;
+    color: white;
 }
