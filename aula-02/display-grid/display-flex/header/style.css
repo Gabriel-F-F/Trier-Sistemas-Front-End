@@ -1,0 +1,94 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+/* define todas as listas, links e títulos de nível 3 para esses padrãos */
+ul, a, h3 {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(223, 95, 73);
+    height: 40px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li a:hover {
+    color: wheat;
+}
+
+/* Content */
+
+div {
+    height: 50px;
+    width: 50px;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-2 {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.div-1 {
+    grid-area: div1;
+    background-color: rgb(80, 15, 105);
+}
+
+.div-2 {
+    grid-area: div2;
+    background-color: rgb(80, 15, 105);
+}
+
+.div-3 {
+    grid-area: div3;
+    background-color: rgb(148, 50, 194);
+}
+
+.div-4 {
+    grid-area: div4;
+    background-color: blueviolet;
+}
+
+.div-5 {
+    grid-area: div5;
+    background-color: black;
+}
+
+.div-6 {
+    grid-area: div3;
+    background-color: rgb(148, 50, 194);
+}
+
+.div-7 {
+    grid-area: div4;
+    background-color: blueviolet;
+}
+
+.div-8 {
+    grid-area: div5;
+    background-color: black;
+}

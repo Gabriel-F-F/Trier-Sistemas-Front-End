@@ -7,7 +7,7 @@
 .grid-container{
     height: 100%;
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 160px 1fr;
     grid-template-rows: 50px 1fr;
     grid-template-areas: 
     'div1 div1'
@@ -21,6 +21,8 @@
 }
 
 .navigation{
+    height: 60px;
+    width: 140px;
     font-family: monospace;
     font-size: 20px;
     color:rgb(255, 255, 255);
@@ -36,12 +38,14 @@
 }
 
 .div-2{
-    height: 50%;
-    width: 80%;
+    gap: 7px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     flex-direction: column;
     grid-area: div2;
-    background-color: rgb(179, 173, 173);
+    background-color: rgb(131, 126, 126);
 }
 
 .div-3{

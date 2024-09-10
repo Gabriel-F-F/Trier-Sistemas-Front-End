@@ -1,0 +1,43 @@
+.flex-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div {
+    height: 50px;
+    width: 50px;
+}
+
+.div-1 {
+    grid-area: div1;
+    background-color: rgb(80, 15, 105);
+}
+
+.div-2 {
+    grid-area: div2;
+    background-color: rgb(80, 15, 105);
+}
+
+.div-3 {
+    grid-area: div3;
+    background-color: rgb(148, 50, 194);
+}
+
+.div-4 {
+    grid-area: div4;
+    background-color: blueviolet;
+}
+
+.div-5 {
+    grid-area: div5;
+    background-color: black;
+}
+
+.div-6 {
+    grid-area: div6;
+    background-color: darkslateblue;
+}
