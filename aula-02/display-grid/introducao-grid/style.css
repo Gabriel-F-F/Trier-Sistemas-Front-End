@@ -3,17 +3,17 @@
     margin: 0;
     height: 100%; /* deixa o html na borda total */
 }
-/*
+
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ou 1fr 1fr 1fr ;
-    grid-template-rows: 45px 1fr;
+    grid-template-columns: repeat(3, 1fr) /*(ou 1fr 1fr 1fr)*/;
+    grid-template-rows: 30px 1fr;
     grid-template-areas: 
     'div1 div1 div1'
-    'div2 empty div4'
-    gap: 10px;  deixa um espaço de 10 pixeis entre as grids
-}
-*/
+    'div2 empty div4';
+    gap: 10px; /* deixa um espaço de 10 pixeis entre as grids */
+}   
+
 .grid-container-exercicio{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -34,12 +34,12 @@
 
 .div-2{
     grid-area: div2;
-    background-color: purple;
+    background-color: rgb(80, 15, 105);
 }
 
 .div-3{
     grid-area: div3;
-    background-color: rgb(87, 0, 128);
+    background-color: rgb(148, 50, 194);
 }
 
 .div-4{
@@ -56,3 +56,16 @@
     grid-area: div6;
     background-color: darkslateblue;
 }
+
+/* caso a tela seja menor ou igual a 600 pixeis */
+@media only screen and (max-width: 600px){
+    .grid-container{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 30px 1fr 1fr;
+        grid-template-areas: 
+        'div1'
+        'div2'
+        'div3'
+        ;
+    }
+};
