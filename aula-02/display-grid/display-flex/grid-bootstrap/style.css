@@ -1,0 +1,12 @@
+div {
+    border: 1px solid black;
+}
+
+.main .row {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.main {
+    padding: 20px;
+}
