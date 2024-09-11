@@ -6,10 +6,11 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 20% 65% 15%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 30% 50% 20%;
+    grid-template-rows: 20% 80%;
     grid-template-areas:
         'div1 div2 div3'
+        'div4 div2 div3'
     ;
 }
 
@@ -34,17 +35,43 @@
     font-style: oblique;
 }
 
+.navigation{
+    font-family: monospace;
+    font-size: 30px;
+    color:rgb(255, 255, 255);
+}
+
+ a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
 .div-1 {
     grid-area: div1;
     background-color: rgb(26, 25, 25);
 }
 
 .div-2 {
-    padding-top: 70px;
     grid-area: div2;
+    overflow: hidden;
 }
 
 .div-3 {
     grid-area: div3;
-    background-color: rgb(59, 57, 57);
+    background-color: rgb(26, 25, 25);
+}
+
+.div-4 {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-area: div4;
+    background-color: rgb(26, 25, 25);
+}
+
+.div-4 ul li {
+    height: fit-content;
 }
