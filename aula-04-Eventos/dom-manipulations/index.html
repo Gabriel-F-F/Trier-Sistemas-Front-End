@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+    <div id="divVazia"></div>
+    <label class="label-topo">Label Topo</label>
+    <div style="margin-left: 10px; display: flex; flex-direction: column;">
+        <form onsubmit="manipulando(event)" style="display: flex; flex-direction: column;">
+            <input type="text" id="nome" onkeyup="atualizaLabelInput()">
+            <label id="labelInput"></label>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

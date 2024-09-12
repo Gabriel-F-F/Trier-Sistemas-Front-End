@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Eventos HTML</title>
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+    <section style="display: flex; flex-direction: row;">
+        <div>
+            <div style="height: 80px; border: 1px solid black;" onclick="alerta()">
+                Click
+            </div>
+            <div style="height: 80px; border: 1px solid black;" ondblclick="alerta()">
+                Double Click
+            </div>
+            <div style="height: 80px; border: 1px solid black;" onmouseover="alerta()">
+                Mouse Over
+            </div>
+            <div style="height: 80px; border: 1px solid black;" onmouseout="alerta()">
+                Mouse Out
+            </div>
+            <div style="height: 80px; border: 1px solid black;" onmousedown="alerta()">
+                Mouse Down
+            </div>
+            <div style="height: 80px; border: 1px solid black;" onmouseup="alerta()">
+                Mouse Up
+            </div>
+        </div>
+        <div style="margin-left: 10px; width: 80px; display: flex; flex-direction: column-reverse;">
+            <input style="height: 80px; border: 1px solid black;" onkeydown="alerta()">
+            Key Down
+            </input>
+            <input style="height: 80px; border: 1px solid black;" onkeyup="alerta()">
+            Key Up
+            </input>
+            <input style="height: 80px; border: 1px solid black;" onkeypress="alerta()">
+            Key Press
+            </input>
+        </div>
+        <div style="margin-left: 10px; display: flex; flex-direction: column;">
+            <form onsubmit="teste(event)" style="display: flex; flex-direction: column;">
+                <input type="text" onfocus="loga()">
+                <input type="text" onblur="loga()">
+                <select name="" id="" onchange="teste(event)">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
