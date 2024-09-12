@@ -5,10 +5,10 @@ console.log(contador());
 
 function tabela(lista) {
     const tabela = document.getElementById("tabela");
-    const thead = tabela.querySelector("thead tr")
+    const tr = document.createElement("<tr> <td>1</td> <td>1</td><td>1</td><td>1</td> <tr>");
 
     listaTarefas.forEach(id => {
-        lista = document.createElement("")
+        lista = document.append()
     });
 }
 

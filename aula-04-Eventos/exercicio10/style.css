@@ -26,17 +26,35 @@
 }
 
 section { 
-    display: flex;
+    display: grid;
     grid-area: section;
-    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 100px 1fr;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
+    grid-template-areas: 
+    "divFundo"
+    "divAdicionar"
+    "divLista"
+    ;
 
     background-color: rgb(53, 47, 91);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+}
+
+table {
+    width: 100%; 
+    padding-left: 50px; 
+    padding-right: 50px; 
+    height: 10px;
+} 
+
+tr {
+    background-color: rgb(24, 18, 63); 
+}
+
+th {
+    background-color: rgb(117, 104, 204);
 }
 
 .input-adicionar-tarefa {
@@ -59,13 +77,26 @@ section {
 }
 
 .div-adicionar-tarefa {
-    width: 900px;
-    height: 50px;
+    grid-area: divAdicionar;
     display: flex;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 50px;
+    justify-content: center;
 }
 
 .div-lista {
-    background-color: rgb(23, 18, 54);
-    width: 900px;
-    height: 450px;
+    grid-area: divLista;
+    display: flex;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: center;
+    background-color: rgb(53, 47, 91);
+}
+
+.div-fundo {
+    grid-area: divFundo;
+    background-color: rgb(53, 47, 91);
 }

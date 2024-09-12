@@ -15,26 +15,32 @@
 
 <body>
     <div class="grid-container">
-        <header class="header">
-            TODO LIST
-        </header>
+        <header class="header">TODO LIST</header>
         <section>
             <div class="div-adicionar-tarefa">
-                <input class="input-adicionar-tarefa">
-                <button class="button-enviar-tarefa">+ Tarefa</button>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" style="background-color: rgb(23, 18, 54);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 30px;
+                    color: white;">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Adicionar</button>
+                </div>
             </div>
             <div class="div-lista">
-                <table class="table" style="height: 900px;">
-                    <thead>
+                <table border id="tabela">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Para Fazer</th>
-                            <th scope="col">Feito</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Excluir</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                </table>
+                        <tr>
+                            <td>1</td>
+                            <td>Ir na Padaria</td>
+                            <td>Concluído <input type="checkbox"></td>
+                            <td>Deletar <input type="checkbox"></td>
+                        </tr>
+                  </table>
             </div>
         </section>
     </div>
