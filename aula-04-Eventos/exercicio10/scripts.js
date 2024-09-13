@@ -57,7 +57,7 @@ function atualizarTabela() {
         const colunaExcluir = document.createElement("td");
         const botaoExcluir = document.createElement("button");
         botaoExcluir.typeContent = "Excluir";
-        botaoExcluir.style = "height: 20px; width: 150px;"
+        botaoExcluir.style = "height: 25px; width: 150px;"
         botaoExcluir.checked = tarefa.excluido;
         botaoExcluir.addEventListener("click", () => {
             excluirTarefa(tarefa.id);
