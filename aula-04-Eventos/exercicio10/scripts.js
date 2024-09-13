@@ -19,7 +19,7 @@ function adicionarTarefa() {
     listaTarefas.push(tarefa);
     input.value = "";
     atualizarTabela();
-    atualizarContagem();
+    contagem();
 }
 
 function atualizarTabela() {
@@ -44,7 +44,7 @@ function atualizarTabela() {
         checkboxStatus.checked = tarefa.status;
         checkboxStatus.addEventListener("change", () => {
             tarefa.status = true;
-            atualizarContagem();
+            contagem();
         });
         colunaStatus.appendChild(checkboxStatus);
         linha.appendChild(colunaStatus);
@@ -66,34 +66,25 @@ function atualizarTabela() {
 function retirarConcluidas() {
     listaTarefas = listaTarefas.filter(tarefa => tarefa.status !== true);
     atualizarTabela();
-    atualizarContagem();
+    contagem();
 }
 
 function excluirTarefa(id) {
     listaTarefas = listaTarefas.filter(tarefa => tarefa.id !== id);
     atualizarTabela();
-    atualizarContagem();
+    contagem();
 }
 
-function contagemPendentes() {
+function contagem() {
     let contadorPendentes = 0;
+    let contagemConcluidas = 0;
     listaTarefas.forEach(tarefa => {
         if(tarefa.status !== true)
             contadorPendentes++;
     });
-    return contadorPendentes;
-}
 
-function contagemConcluidas() {
-    let contagem = 0;
-    listaTarefas.forEach(tarefa => {
-        if(tarefa.status == true)
-            contagem++;
-    });
-    return contagem;
-}
-
-function atualizarContagem() {
-    document.getElementById("contador-pendentes").textContent = contagemPendentes();
-    document.getElementById("contador-concluidas").textContent = contagemConcluidas();
+    contagemConcluidas = listaTarefas.length - contadorPendentes;
+    
+    document.getElementById("contador-pendentes").textContent = contadorPendentes;
+    document.getElementById("contador-concluidas").textContent = contagemConcluidas;
 }
