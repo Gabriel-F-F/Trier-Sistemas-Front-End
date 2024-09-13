@@ -43,6 +43,8 @@ section {
 }
 
 table {
+    justify-content: space-between;
+    align-items: center;
     width: 100%; 
     padding-left: 50px; 
     padding-right: 50px; 
@@ -51,10 +53,6 @@ table {
 
 tr {
     background-color: rgb(24, 18, 63); 
-}
-
-th {
-    background-color: rgb(117, 104, 204);
 }
 
 .input-adicionar-tarefa {
