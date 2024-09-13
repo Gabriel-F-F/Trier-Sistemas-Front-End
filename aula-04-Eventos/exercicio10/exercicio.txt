@@ -1,9 +1,9 @@
 Exercício 10
 
 TODO LIST
-	O usuário deve ser capaz de adicionar novos itens à lista de tarefas.
-	Cada item adicionado deve ter um botão de "remover" e um botão de "marcar como concluído".
-	O botão "remover" deve remover o item da lista.
-	Adicione validação para impedir que o usuário adicione tarefas vazias.
-	Adicione um botão "Limpar Tarefas Concluídas", que remove todos os itens que foram marcados como concluídos.
-	Crie uma contagem dinâmica de quantas tarefas ainda estão pendentes e quantas já foram concluídas.
+	<< O usuário deve ser capaz de adicionar novos itens à lista de tarefas. >>
+	<< Cada item adicionado deve ter um botão de "remover" e um botão de "marcar como concluído". >>
+	<< O botão "remover" deve remover o item da lista. >>
+	<< Adicione validação para impedir que o usuário adicione tarefas vazias. >>
+	<< Adicione um botão "Limpar Tarefas Concluídas", que remove todos os itens que foram marcados como concluídos. >>
+	<< Crie uma contagem dinâmica de quantas tarefas ainda estão pendentes e quantas já foram concluídas.>>

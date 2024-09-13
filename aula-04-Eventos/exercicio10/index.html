@@ -12,11 +12,15 @@
     <script src="./scripts.js" defer></script>
 </head>
 
-
 <body>
     <div class="grid-container">
         <header class="header">TODO LIST</header>
+
         <section>
+            <div style="display: flex;">
+                <span>Pendentes: </span><span id="contador-pendentes"></span>
+                <span>Concluídas: </span><span id="contador-concluidas"></span>
+            </div>
             <div class="div-adicionar-tarefa">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" style="background-color: rgb(156, 145, 228);
@@ -25,10 +29,12 @@
                     color: rgb(18, 13, 46);" id="input-adicionar">
                     <button class="btn btn-outline-secondary" type="button" id="botao-adicionar"
                         onclick="adicionarTarefa()">Adicionar</button>
+                    <button class="btn btn-outline-secondary" type="button" id="botao-concluidas"
+                        onclick="retirarConcluidas()">Retirar Concluídas</button>
                 </div>
             </div>
             <div class="div-lista">
-                <table border id="tabela">
+                <table border style="font-size: 20px;" id="tabela">
                 </table>
             </div>
         </section>
