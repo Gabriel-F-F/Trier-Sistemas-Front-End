@@ -11,7 +11,7 @@ describe('ComponenteFormClienteComponent', () => {
       declarations: [ComponenteFormClienteComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ComponenteFormClienteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

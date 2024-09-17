@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,22 +10,30 @@ export class AppComponent {
   pesquisa = "";
 
   clientes = [
-    {nome: "Gabriel"},
-    {nome: "Nasser"},
-    {nome: "Hugo"},
-    {nome: "Vitor"},
-    {nome: "Márcio"}
+    { nome: "Gabriel" },
+    { nome: "Nasser" },
+    { nome: "Hugo" },
+    { nome: "Vitor" },
+    { nome: "Márcio" }
   ]
 
   adicionarClientes() {
-    this.clientes.push({nome: "Teste"});
+    this.clientes.push({ nome: "Teste" });
   }
 
   trocarTitulo(titulo: string) {
     this.title = titulo;
   }
 
-  enviarPesquisa(pesquisa:string) {
+  enviarPesquisa(pesquisa: string) {
     this.title = pesquisa;
   }
+
+  listaClientes: { nome: string, email: string, idade: string }[] = [];
+
+  receberCadastro(cliente: { nome: string, email: string, idade: string }) {
+    this.listaClientes.push(cliente);
+    console.log(this.listaClientes);
+  }
+
 }

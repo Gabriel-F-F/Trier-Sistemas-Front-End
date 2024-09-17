@@ -11,7 +11,7 @@ describe('ComponenteListClienteComponent', () => {
       declarations: [ComponenteListClienteComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ComponenteListClienteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
