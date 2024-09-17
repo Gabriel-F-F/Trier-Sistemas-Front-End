@@ -1,2 +1,21 @@
-<app-componente-cabecalho></app-componente-cabecalho>
+<!-- <app-componente-cabecalho [tituloDoPai]="title" (trocarTituloEvent)="trocarTitulo($event)"></app-componente-cabecalho> -->
+<app-componente-cabecalho [tituloDoPai]="title" (trocarTituloEvent)="trocarTitulo($event)"
+  (enviarPesquisaEvent)="enviarPesquisa($event)">
+</app-componente-cabecalho>
 <app-componente-conteudo></app-componente-conteudo>
+<app-meu-primeiro-componente></app-meu-primeiro-componente>
+<app-componente-formulario></app-componente-formulario>
+<div style="height: fit-content;" *ngIf="clientes.length > 0; else elseBlock">Lista de Clientes</div>
+
+<table style="height: fit-content; width: 300px;" border>
+  <tr>
+    <th>Nome</th>
+  </tr>
+  <tr *ngFor="let clientes of clientes">
+    <td>{{clientes.nome}}</td>
+  </tr>
+  <button (click)="adicionarClientes()">Cadastrar Clientes</button>
+</table>
+<ng-template #elseBlock>
+  <div>Não há Clientes!</div>
+</ng-template>

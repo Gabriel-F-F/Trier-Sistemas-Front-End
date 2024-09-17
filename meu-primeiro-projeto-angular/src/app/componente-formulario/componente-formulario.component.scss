@@ -1,0 +1,18 @@
+* {
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+div {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+
+button {
+  width: 10%;
+  align-items: center;
+}

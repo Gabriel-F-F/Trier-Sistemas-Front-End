@@ -1,0 +1,7 @@
+<div>Formulário</div>
+<form>
+  <input name="nome" type="text" placeholder="Nome..." [(ngModel)]="inputNome">{{inputNome}}
+  <input name="email" type="email" placeholder="E-mail..." [(ngModel)]="inputEmail">{{inputEmail}}
+  <input name="fone" type="text" placeholder="Fone..." [(ngModel)]="inputFone">{{inputFone}}
+  <button (click)="enviar()">Enviar</button>
+</form>

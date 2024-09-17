@@ -1,3 +1,8 @@
 <div class="cabecalho">
-  <header>{{titulo}}</header>
+  <h1>
+  {{ tituloDoPai }}
+  <input type="text" [(ngModel)]="inputPesquisa">
+  <button (click)="enviarPesquisa()">Pesquisar</button>
+  <button (click)="trocarTitulo()">Trocar Título</button>
+</h1>
 </div>

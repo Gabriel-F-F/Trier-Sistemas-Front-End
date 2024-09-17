@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'meu-primeiro-projeto-angular';
+  title = 'Meu Primeiro Projeto Angular';
+  pesquisa = "";
+
+  clientes = [
+    {nome: "Gabriel"},
+    {nome: "Nasser"},
+    {nome: "Hugo"},
+    {nome: "Vitor"},
+    {nome: "Márcio"}
+  ]
+
+  adicionarClientes() {
+    this.clientes.push({nome: "Teste"});
+  }
+
+  trocarTitulo(titulo: string) {
+    this.title = titulo;
+  }
+
+  enviarPesquisa(pesquisa:string) {
+    this.title = pesquisa;
+  }
 }

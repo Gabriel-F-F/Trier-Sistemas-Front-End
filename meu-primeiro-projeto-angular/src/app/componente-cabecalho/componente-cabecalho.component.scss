@@ -3,10 +3,31 @@
   background-color: tomato;
 }
 
-header {
+div {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 40px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: fit-content;
+}
+
+input {
+  width: 30%;
+  height: 50%;
+  background-color: rgb(160, 42, 22);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+button {
+  width: 10%;
+  height: 50%;
+  background-color: rgb(221, 79, 54);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
 }
