@@ -6,26 +6,31 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './componente-form-cliente.component.scss'
 })
 export class ComponenteFormClienteComponent {
-  @Output() adicionarClienteEvent = new EventEmitter<{id: number, nome: string, email: string, idade: number}>
+  @Output() adicionarClienteEvent = new EventEmitter<{ id: number, nome: string, email: string, idade: number }>
 
-  id = 0;
+  id = 1;
   inputNome = "";
   inputEmail = "";
   inputIdade = "";
 
-  enviarCadastro() {
-    const cliente = {
-      id: this.id,
-      nome: this.inputNome,
-      email: this.inputEmail,
-      idade: Number(this.inputIdade)
-    };
+  adicionarCliente() {
+    if (this.inputNome && this.inputEmail && this.inputIdade) {
+      const cliente = {
+        id: this.id,
+        nome: this.inputNome,
+        email: this.inputEmail,
+        idade: Number(this.inputIdade)
+      };
 
-    this.adicionarClienteEvent.emit(cliente);
-    this.id++;
+      this.adicionarClienteEvent.emit(cliente);
+      this.id++;
 
-    this.inputNome = "";
-    this.inputEmail = "";
-    this.inputIdade = "";
+      this.inputNome = "";
+      this.inputEmail = "";
+      this.inputIdade = "";
+
+    } else {
+      alert("Cadastro de Cliente Incompleto!")
+    }
   }
 }

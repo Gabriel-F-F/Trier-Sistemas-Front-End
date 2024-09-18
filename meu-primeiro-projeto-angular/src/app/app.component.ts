@@ -33,8 +33,9 @@ export class AppComponent {
   // CLIENTES
 
   listaClientes: { id: number, nome: string, email: string, idade: number }[] = [];
+  editarCliente?: { id: number, nome: string, email: string, idade: number };
 
-  receberCadastro(cliente: { id: number, nome: string, email: string, idade: number }) {
+  receberCliente(cliente: { id: number, nome: string, email: string, idade: number }) {
     this.listaClientes.push(cliente);
   }
 }

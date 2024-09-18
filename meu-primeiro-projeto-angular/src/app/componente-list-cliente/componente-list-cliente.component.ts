@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-componente-list-cliente',
@@ -7,8 +7,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ComponenteListClienteComponent {
   @Input() listaClientes?: { id: number, nome: string, email: string, idade: number }[];
+  @Output() clienteRemovido?: { id: number, nome: string, email: string, idade: number };
 
-  exibirClientes() {
-    console.log(this.listaClientes);
+  removerCliente(id: number) {
+    this.listaClientes?.forEach(cliente => {
+      if (cliente.id == id) {
+        this.clienteRemovido = cliente;
+      }
+    });
   }
 }

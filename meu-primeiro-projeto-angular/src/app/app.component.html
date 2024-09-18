@@ -20,5 +20,16 @@
   <div>Não há Clientes!</div>
 </ng-template>
 
-<app-componente-form-cliente (adicionarClienteEvent)="receberCadastro($event)"></app-componente-form-cliente>
+<app-componente-form-cliente (adicionarClienteEvent)="receberCliente($event)"></app-componente-form-cliente>
 <app-componente-list-cliente [listaClientes]="listaClientes"></app-componente-list-cliente>
+
+<div class="div-rota">
+<header>
+  <h1>Rotas</h1>
+  <ul>
+    <li><a routerLink="formulario"></a>Cadastrar Clientes</li>
+    <li><a routerLink="listagem"></a>Listagem</li>
+  </ul>
+</header>
+<router-outlet></router-outlet>
+</div>
