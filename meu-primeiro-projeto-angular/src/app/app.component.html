@@ -20,6 +20,5 @@
   <div>Não há Clientes!</div>
 </ng-template>
 
-<app-componente-form-cliente
-  (adicionarClienteEvent)="receberCadastro($event)"></app-componente-form-cliente>
-<app-componente-list-cliente></app-componente-list-cliente>
+<app-componente-form-cliente (adicionarClienteEvent)="receberCadastro($event)"></app-componente-form-cliente>
+<app-componente-list-cliente [listaClientes]="listaClientes"></app-componente-list-cliente>

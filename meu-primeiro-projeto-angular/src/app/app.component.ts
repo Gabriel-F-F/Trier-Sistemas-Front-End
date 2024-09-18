@@ -29,11 +29,12 @@ export class AppComponent {
     this.title = pesquisa;
   }
 
-  listaClientes: { nome: string, email: string, idade: string }[] = [];
 
-  receberCadastro(cliente: { nome: string, email: string, idade: string }) {
+  // CLIENTES
+
+  listaClientes: { id: number, nome: string, email: string, idade: number }[] = [];
+
+  receberCadastro(cliente: { id: number, nome: string, email: string, idade: number }) {
     this.listaClientes.push(cliente);
-    console.log(this.listaClientes);
   }
-
 }

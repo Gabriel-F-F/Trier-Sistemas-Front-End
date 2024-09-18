@@ -1,0 +1,16 @@
+<table border>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Idade</th>
+    <th>Ações</th>
+  </tr>
+  <tr *ngFor="let cliente of listaClientes">
+    <td>{{ cliente.id }}</td>
+    <td>{{ cliente.nome }}</td>
+    <td>{{ cliente.email }}</td>
+    <td>{{ cliente.idade }}</td>
+    <td><button>Editar</button><button>Remover</button></td>
+  </tr>
+</table>
