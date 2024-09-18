@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-componente-form-cliente',
@@ -12,6 +13,16 @@ export class ComponenteFormClienteComponent {
   inputNome = "";
   inputEmail = "";
   inputIdade = "";
+
+  // EXEMPLO ROUTE formulario/:id
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe((valores) => {
+      console.log(valores);
+      const idCliente = valores["id"];
+      console.log(idCliente);
+    });
+  }
+  // EXEMPLO ROUTE formulario/:id
 
   adicionarCliente() {
     if (this.inputNome && this.inputEmail && this.inputIdade) {

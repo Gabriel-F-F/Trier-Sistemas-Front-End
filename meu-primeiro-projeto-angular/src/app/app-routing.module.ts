@@ -4,17 +4,21 @@ import { ComponenteFormClienteComponent } from './componente-form-cliente/compon
 import { ComponenteListClienteComponent } from './componente-list-cliente/componente-list-cliente.component';
 
 const routes: Routes = [
-  //{ path: "", component: ComponenteFormClienteComponent },
-  //{ path: "formulario", component: ComponenteFormClienteComponent },
-  //{ path: "listagem", component: ComponenteListClienteComponent }
 
-  { path: "clientesPai",
-    component: ComponenteFormClienteComponent,
-    children: [
-      { path: "listagem", component: ComponenteListClienteComponent },
-      { path: "cadastro", component: ComponenteFormClienteComponent }
-    ]
-  }
+  { path: "", component: ComponenteFormClienteComponent },
+  { path: "teste", redirectTo: "cliente" },
+  { path: "cliente", component: ComponenteListClienteComponent },
+  { path: "formulario", component: ComponenteFormClienteComponent },
+  // EXEMPLO ROUTE formulario/:id
+  { path: "formulario/:id", component: ComponenteFormClienteComponent },
+  // EXEMPLO ROUTE formulario/:id
+
+  // { path: "clientes",
+  //   children: [
+  //     { path: "listagem", component: ComponenteListClienteComponent },
+  //     { path: "cadastro", component: ComponenteFormClienteComponent }
+  //   ]
+  // }
 ];
 
 @NgModule({
