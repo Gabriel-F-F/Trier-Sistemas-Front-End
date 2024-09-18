@@ -1,0 +1,25 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+
+.div-header {
+  height: 150px;
+  background-color: rebeccapurple;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+}
+
+a, ul, li {
+  height: 75px;
+  text-decoration: none;
+  list-style: none;
+  color: rgb(0, 255, 13)
+}
+
+.active {
+  background-color: rgb(153, 76, 230);
+}

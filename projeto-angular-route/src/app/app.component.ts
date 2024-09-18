@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'projeto-angular-route';
+  listaClientes: { id: number, nome: string, email: string, idade: number }[] = [];
+  editarCliente?: { id: number, nome: string, email: string, idade: number };
+
+  receberCliente(cliente: { id: number, nome: string, email: string, idade: number }) {
+    this.listaClientes.push(cliente);
+  }
 }
+

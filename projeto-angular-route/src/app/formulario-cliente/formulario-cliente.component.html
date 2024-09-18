@@ -1,1 +1,6 @@
-<p>formulario-cliente works!</p>
+<form>
+  <input name="nome" type="text" placeholder="Nome..." [(ngModel)]="inputNome">
+  <input name="email" type="email" placeholder="E-mail..." [(ngModel)]="inputEmail">
+  <input name="idade" type="number" placeholder="Idade..." [(ngModel)]="inputIdade">
+  <button (click)="adicionarCliente()">Cadastrar Cliente</button>
+</form>
