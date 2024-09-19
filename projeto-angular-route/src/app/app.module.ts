@@ -7,6 +7,7 @@ import { FormularioClienteComponent } from './formulario-cliente/formulario-clie
 import { ListagemClienteComponent } from './listagem-cliente/listagem-cliente.component';
 import { FormsModule } from '@angular/forms';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
     AppComponent,
     FormularioClienteComponent,
     ListagemClienteComponent,
-    NaoEncontradoComponent
+    NaoEncontradoComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
