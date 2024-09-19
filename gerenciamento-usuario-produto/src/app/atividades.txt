@@ -1,0 +1,6 @@
+Exercício 07: Front-End
+>> Crie um novo projeto com o nome de gerenciamento-usuario-produto <<
+.. Crie um modulo de layout onde a tela será dividida em header e conteúdo <<
+>> Crie um módulo de usuário e um módulo de produto <<
+>> Implemente componentes de listagem e cadastro para cada um <<
+Faça o menu alterar entre as telas, mostrando a tela ativa
