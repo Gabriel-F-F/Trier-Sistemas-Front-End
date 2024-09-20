@@ -17,18 +17,20 @@
   grid-area: header;
   background-color: rgb(22, 16, 114);
   display: flex;
-  justify-content: center;
-  align-items: center;
+
 
   //FONTE
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 45px;
   color: white;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
 .content {
   grid-area: content;
-  background-color: rgb(128, 0, 255);
+  background-color: rgb(255, 255, 255);
   padding-top: 20px;
   padding-left: 20px;
 }
