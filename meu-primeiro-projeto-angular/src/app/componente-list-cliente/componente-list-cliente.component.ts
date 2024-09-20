@@ -7,13 +7,16 @@ import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 })
 export class ComponenteListClienteComponent {
   @Input() listaClientes?: { id: number, nome: string, email: string, idade: number }[];
-  @Output() clienteRemovido?: { id: number, nome: string, email: string, idade: number };
+  @Output() clienteRemovidoEvent = new EventEmitter<number>(); 
+  @Output() editandoClienteEvent = new EventEmitter<{ id: number, nome: string, email: string, idade: number }>();
 
-  removerCliente(id: number) {
-    this.listaClientes?.forEach(cliente => {
-      if (cliente.id == id) {
-        this.clienteRemovido = cliente;
+  editandoCliente(cliente: { id: number, nome: string, email: string, idade: number }) {
+    this.editandoClienteEvent.emit(cliente);
+  }
+
+  removerCliente(id?: number) {
+      if (id || id == 0) {
+        this.clienteRemovidoEvent.emit(id);
       }
-    });
   }
 }

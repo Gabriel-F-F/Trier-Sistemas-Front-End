@@ -20,8 +20,16 @@
   <div>Não há Clientes!</div>
 </ng-template>
 
-<app-componente-form-cliente (adicionarClienteEvent)="receberCliente($event)"></app-componente-form-cliente>
-<app-componente-list-cliente [listaClientes]="listaClientes"></app-componente-list-cliente>
+<app-componente-form-cliente 
+[clienteEditado]="editarCliente"
+ (adicionarClienteEvent)="receberCliente($event)"
+ (editandoClienteEvent)="editarClienteEvent($event)">
+</app-componente-form-cliente>
+
+<app-componente-list-cliente 
+(clienteRemovidoEvent)="removerCliente($event)"
+(editandoClienteEvent)="enviarEdicaoCliente($event)"
+[listaClientes]="listaClientes"></app-componente-list-cliente>
 
 <div class="div-rota">
 <header>

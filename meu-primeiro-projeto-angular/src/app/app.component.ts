@@ -33,9 +33,28 @@ export class AppComponent {
   // CLIENTES
 
   listaClientes: { id: number, nome: string, email: string, idade: number }[] = [];
-  editarCliente?: { id: number, nome: string, email: string, idade: number };
-
+  
   receberCliente(cliente: { id: number, nome: string, email: string, idade: number }) {
     this.listaClientes.push(cliente);
+  }
+
+  editarCliente?: { id: number, nome: string, email: string, idade: number };
+
+  editarClienteEvent(cliente: { id: number, nome: string, email: string, idade: number }) {
+    this.listaClientes.forEach(item => {
+      if (item.id == cliente.id) {
+        item.nome = cliente.nome;
+        item.email = cliente.email;
+        item.idade = cliente.idade;
+      }
+    });
+  }
+
+  enviarEdicaoCliente(cliente: { id: number, nome: string, email: string, idade: number }) {
+    this.editarCliente = cliente;
+  }
+
+  removerCliente(id: number) {
+    this.listaClientes = this.listaClientes.filter(cliente => cliente.id !== id);
   }
 }

@@ -12,8 +12,8 @@
     <td>{{ cliente.email }}</td>
     <td>{{ cliente.idade }}</td>
     <td>
-      <button>Editar</button>
-      <button>Remover</button>
+      <button (click)="editandoCliente(cliente)">Editar</button>
+      <button (click)="removerCliente(cliente.id)">Remover</button>
     </td>
   </tr>
 </table>
