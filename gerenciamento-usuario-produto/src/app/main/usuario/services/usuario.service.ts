@@ -6,7 +6,7 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  listaUsuario: Array<Usuario> = [];
+  private listaUsuario: Array<Usuario> = [];
 
   constructor() { }
 
@@ -16,5 +16,22 @@ export class UsuarioService {
 
   getList() {
     return this.listaUsuario;
+  }
+
+  getId(): number {
+    if (this.listaUsuario.length === 0) {
+      return 1;
+    }
+
+    const maiorId = Math.max(...this.listaUsuario.map(usuario => usuario.id));
+    return maiorId + 1;
+  }
+
+  findById(id: number) {
+
+  }
+
+  excluirUsuario(id: number) {
+    this.listaUsuario = this.listaUsuario.filter(usuario => usuario.id !== id);
   }
 }

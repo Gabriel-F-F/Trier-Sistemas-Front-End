@@ -1,14 +1,19 @@
 <table border>
   <tr>
     <th>ID</th>
-    <th>PRODUTO</th>
-    <th>ESTOQUE</th>
-    <th>PREÇO</th>
+    <th>Produto</th>
+    <th>Estoque</th>
+    <th>Preço</th>
+    <th>Ações</th>
   </tr>
-  <tr>
-    <th>1</th>
-    <th>Banana</th>
-    <th>57</th>
-    <th>R$ 7,98</th>
+  <tr *ngFor="let produto of listaProduto">
+    <td>{{ produto.id }}</td>
+    <td>{{ produto.nome }}</td>
+    <td>{{ produto.estoque }}</td>
+    <td>{{ produto.preco }}</td>
+    <td>
+      <button>Editar</button>
+      <button>Excluir</button>
+    </td>
   </tr>
 </table>

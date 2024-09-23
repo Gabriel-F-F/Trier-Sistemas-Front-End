@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProdutoService } from '../../services/produto.service';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -12,8 +13,8 @@ export class CadastroProdutoComponent implements OnInit {
   posts: any;
 
   constructor (
-    private FormBuilder: FormBuilder,
-    //private produtoService: ProductService
+    private formBuilder: FormBuilder,
+    private service: ProdutoService
   ) {}
 
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class CadastroProdutoComponent implements OnInit {
   buildForm() {
     console.log(this);
 
-    this.form = this.FormBuilder.group({
+    this.form = this.formBuilder.group({
       nome: [null, Validators.required],
       estoque: [null, (Validators.required, this.validacaoEstoque.bind(this))],
       preco: [null, (Validators.required, this.validacaoPreco.bind(this))]
@@ -48,7 +49,16 @@ export class CadastroProdutoComponent implements OnInit {
 
   cadastrar() {
     if (this.form.valid) {
-      console.log(this.form.getRawValue());
+      const produto = {
+        id: this.service.getId(),
+        nome: this.form.value.nome,
+        estoque: this.form.value.estoque,
+        preco: this.form.value.preco
+      }
+
+      this.service.adicionarProduto(produto);
+      console.log(produto);
+      this.form.reset();
       return;
     }
   }

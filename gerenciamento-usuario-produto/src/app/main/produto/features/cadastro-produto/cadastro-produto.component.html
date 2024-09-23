@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="cadastrar()">
   <input type="text" placeholder="Nome do Produto..." formControlName="nome">
   <input type="number" placeholder="Estoque do Produto..." formControlName="estoque">
-  <input type="number" placeholder="Valor do Produto..." formControlName="preco">
+  <input type="number" placeholder="Preço do Produto..." formControlName="preco">
   <button [disabled]="!this.form.valid" type="submit">Cadastrar</button>
 </form>
