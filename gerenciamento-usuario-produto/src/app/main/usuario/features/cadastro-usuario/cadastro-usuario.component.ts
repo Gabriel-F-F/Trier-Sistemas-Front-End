@@ -18,8 +18,8 @@ export class CadastroUsuarioComponent implements OnInit {
     private service: UsuarioService,
     private route: ActivatedRoute
   ) {
-    this.route.params.subscribe((id) => {
-      console.log(id);
+    this.route.params.subscribe(value => {
+      value["id"];
     })
   }
 
