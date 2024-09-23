@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-listagem-usuario',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ListagemUsuarioComponent {
 
+  constructor(private service: UsuarioService) {
+    console.log(service.getList());
+  }
 }

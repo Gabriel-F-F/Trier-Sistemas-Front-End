@@ -10,7 +10,7 @@ const routes: Routes = [
     component: UsuarioComponent,
     children: [
       {
-        path: "",
+        path: "listagem",
         component: ListagemUsuarioComponent
       },
 

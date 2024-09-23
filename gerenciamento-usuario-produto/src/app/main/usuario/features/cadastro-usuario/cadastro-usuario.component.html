@@ -1,8 +1,6 @@
-<div>
-  <form>
-    <input type="text" placeholder="Nome de Usuário..." [(ngModel)]="inputNomeUsuario">
-    <input type="date" [(ngModel)]="inputDataNascUsuario">
-    <input type="email" placeholder="exemplo@email.com" [(ngModel)]="inputEmailUsuario">
-    <button>Cadastrar</button>
-  </form>
-</div>
+<form [formGroup]="form" (submit)="cadastrar()">
+  <input type="text" placeholder="Nome de Usuário..." formControlName="nome">
+  <input type="number" placeholder="26..." formControlName="idade">
+  <input type="email" placeholder="exemplo@email.com" formControlName="email">
+  <button [disabled]="!this.form.valid" type="submit">Cadastrar</button>
+</form>
