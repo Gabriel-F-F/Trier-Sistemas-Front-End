@@ -14,11 +14,11 @@ export class ProdutoService {
 
   // OBSERVABLE
   constructor() { }
-  tunnedObservable = new Subject<string>();
+  tunnedObservable$ = new Subject<string>();
   emitEvent(value: string) {
-    this.tunnedObservable.next(value);
+    this.tunnedObservable$.next(value);
   }
- // OBSERVABLE
+  // OBSERVABLE
 
   getList() {
     return this.listaProduto;
