@@ -26,4 +26,8 @@ export class ProdutoService {
     const maiorId = Math.max(...this.listaProduto.map(produto => produto.id));
     return maiorId + 1;
   }
+
+  excluirUsuario(id: number) {
+    this.listaProduto = this.listaProduto.filter(produto => produto.id !== id);
+  }
 }

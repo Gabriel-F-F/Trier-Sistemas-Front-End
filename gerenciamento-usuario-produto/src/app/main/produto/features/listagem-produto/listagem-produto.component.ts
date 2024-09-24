@@ -13,7 +13,7 @@ export class ListagemProdutoComponent implements OnInit {
   listaProduto: Produto[] = [];
 
   ngOnInit(): void {
-    this.listaProduto = this.service.getList();
+    this.atualizarLista();
   }
 
   constructor(
@@ -23,5 +23,14 @@ export class ListagemProdutoComponent implements OnInit {
     this.route.params.subscribe((id) => {
       console.log(id);
     })
+  }
+
+  excluirProduto(produto: Produto) {
+    this.service.excluirUsuario(produto.id!);
+    this.atualizarLista();
+  }
+
+  atualizarLista() {
+    this.listaProduto = this.service.getList();
   }
 }
