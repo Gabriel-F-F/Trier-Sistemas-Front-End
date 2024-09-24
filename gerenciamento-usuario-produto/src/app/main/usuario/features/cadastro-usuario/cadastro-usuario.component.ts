@@ -2,7 +2,7 @@ import { Component, input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario.service';
 import { using } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -17,20 +17,22 @@ export class CadastroUsuarioComponent implements OnInit {
     private formBuilder: FormBuilder,
     private service: UsuarioService,
     private route: ActivatedRoute
-  ) {
-    this.route.params.subscribe(value => {
-      value["id"];
-    })
-  }
+  ) { }
 
   ngOnInit(): void {
     this.buildForm();
+
+    this.route.params.subscribe(value => {
+      const usuarioEditado = this.service.findById(value["id"]);
+      this.form.patchValue(usuarioEditado!);
+    });
   }
 
   buildForm() {
     console.log(this);
 
     this.form = this.formBuilder.group({
+      id: [undefined],
       nome: [null, Validators.required],
       idade: [null, (Validators.required, this.validacaoIdade.bind(this))],
       email: [null, Validators.required]
@@ -43,7 +45,7 @@ export class CadastroUsuarioComponent implements OnInit {
     }
 
     if (idade.value >= 100) {
-      return { idadeInvalida: true};
+      return { idadeInvalida: true };
     }
 
     return null;
@@ -51,17 +53,14 @@ export class CadastroUsuarioComponent implements OnInit {
 
   cadastrar() {
     if (this.form.valid) {
-      const usuario = {
-        id: this.service.getId(),
-        nome: this.form.value.nome,
-        idade: this.form.value.idade,
-        email: this.form.value.email
-      };
-
-      this.service.adicionarUsuario(usuario);
-      console.log(usuario);
-      this.form.reset();
-      return;
+      const usuario = this.form.getRawValue();
+      if (usuario.id || usuario.id == 0) {
+        this.service.atualizarUsuario(usuario);
+      } else {
+        this.service.adicionarUsuario(usuario);
+        this.form.reset();
+        return;
+      }
     }
   }
 }

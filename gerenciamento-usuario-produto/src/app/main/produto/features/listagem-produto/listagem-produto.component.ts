@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoService } from '../../services/produto.service';
 import { Produto } from './../../models/produto';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +18,8 @@ export class ListagemProdutoComponent implements OnInit {
 
   constructor(
     private service: ProdutoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.route.params.subscribe((id) => {
       console.log(id);
@@ -32,5 +33,9 @@ export class ListagemProdutoComponent implements OnInit {
 
   atualizarLista() {
     this.listaProduto = this.service.getList();
+  }
+
+  editarProduto(produto: Produto) {
+    this.router.navigateByUrl(`cadastro/${produto.id}`)
   }
 }

@@ -12,7 +12,7 @@
     <td>{{ produto.estoque }}</td>
     <td>{{ produto.preco }}</td>
     <td>
-      <button>Editar</button>
+      <button (click)="editarProduto(produto)">Editar</button>
       <button (click)="excluirProduto(produto)">Excluir</button>
     </td>
   </tr>

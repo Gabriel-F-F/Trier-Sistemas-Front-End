@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProdutoService } from '../../services/produto.service';
+import { ActivatedRoute, Route } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -12,19 +13,26 @@ export class CadastroProdutoComponent implements OnInit {
   form!: FormGroup;
   posts: any;
 
-  constructor (
+  constructor(
     private formBuilder: FormBuilder,
-    private service: ProdutoService
-  ) {}
+    private service: ProdutoService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.buildForm();
+
+    this.route.params.subscribe(value => {
+      const produtoEditado = this.service.findById(value["id"]);
+      this.form.patchValue(produtoEditado!);
+    });
   }
 
   buildForm() {
     console.log(this);
 
     this.form = this.formBuilder.group({
+      id: [undefined],
       nome: [null, Validators.required],
       estoque: [null, (Validators.required, this.validacaoEstoque.bind(this))],
       preco: [null, (Validators.required, this.validacaoPreco.bind(this))]
@@ -32,7 +40,6 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   validacaoEstoque(estoque: FormGroup) {
-    console.log(estoque);
     if (estoque.value <= 0) {
       return { estoqueMinimo: true };
     }
@@ -40,7 +47,6 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   validacaoPreco(preco: FormGroup) {
-    console.log(preco);
     if (preco.value <= 0) {
       return { precoMinimo: true };
     }
@@ -49,17 +55,14 @@ export class CadastroProdutoComponent implements OnInit {
 
   cadastrar() {
     if (this.form.valid) {
-      const produto = {
-        id: this.service.getId(),
-        nome: this.form.value.nome,
-        estoque: this.form.value.estoque,
-        preco: this.form.value.preco
+      const produto = this.form.getRawValue();
+      if (produto.id || produto.id == 0) {
+        this.service.atualizarProduto(produto);
+      } else {
+        this.service.adicionarProduto(produto);
+        this.form.reset();
+        return;
       }
-
-      this.service.adicionarProduto(produto);
-      console.log(produto);
-      this.form.reset();
-      return;
     }
   }
 }

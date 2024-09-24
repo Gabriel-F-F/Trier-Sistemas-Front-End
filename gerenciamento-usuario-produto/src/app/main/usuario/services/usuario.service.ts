@@ -8,27 +8,32 @@ export class UsuarioService {
 
   private listaUsuario: Array<Usuario> = [];
 
-  constructor() { }
+  contador = 1;
 
-  adicionarUsuario(usuario: Usuario) {
-    this.listaUsuario.push(usuario);
-  }
+  constructor() { }
 
   getList() {
     return this.listaUsuario;
   }
 
-  getId(): number {
-    if (this.listaUsuario.length === 0) {
-      return 1;
-    }
-
-    const maiorId = Math.max(...this.listaUsuario.map(usuario => usuario.id));
-    return maiorId + 1;
+  findById(id: number) {
+    return this.listaUsuario.find(usuario => usuario.id == id);
   }
 
-  findById(id: number) {
+  adicionarUsuario(usuario: Usuario) {
+    usuario.id = this.contador;
+    this.listaUsuario.push(usuario);
+    this.contador++;
+  }
 
+  atualizarUsuario(usuario: Usuario) {
+    this.listaUsuario.forEach(item => {
+      if (item.id === usuario.id) {
+        item.nome = usuario.nome;
+        item.idade = usuario.idade;
+        item.email = usuario.email;
+      }
+    });
   }
 
   excluirUsuario(id: number) {

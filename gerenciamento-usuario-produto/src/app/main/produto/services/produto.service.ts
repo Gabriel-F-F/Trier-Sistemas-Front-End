@@ -8,23 +8,32 @@ export class ProdutoService {
 
   private listaProduto: Array<Produto> = [];
 
-  constructor() { }
+  contador = 1;
 
-  adicionarProduto(produto: Produto) {
-    this.listaProduto.push(produto);
-  }
+  constructor() { }
 
   getList() {
     return this.listaProduto;
   }
 
-  getId(): number {
-    if (this.listaProduto.length === 0) {
-      return 1;
-    }
+  adicionarProduto(produto: Produto) {
+    produto.id = this.contador;
+    this.listaProduto.push(produto);
+    this.contador++;
+  }
 
-    const maiorId = Math.max(...this.listaProduto.map(produto => produto.id));
-    return maiorId + 1;
+  atualizarProduto(produto: Produto) {
+    this.listaProduto.forEach(item => {
+      if (item.id === produto.id) {
+        item.nome = produto.nome;
+        item.estoque = produto.estoque;
+        item.preco = produto.preco;
+      }
+    });
+  }
+
+  findById(id: number) {
+    return this.listaProduto.find(produto => produto.id == id);
   }
 
   excluirUsuario(id: number) {
