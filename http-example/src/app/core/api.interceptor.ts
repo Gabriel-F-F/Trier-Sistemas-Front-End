@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 export class ApiInteceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("Antes da Requisição!");
-    req = req.clone( { headers: req.headers.set("Authorization", "123") } );
+    req = req.clone( { headers: req.headers.set("Authorization", "==============") } );
     return next.handle(req);
   }
 }
