@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Produto } from '../models/produto';
+import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,13 @@ export class ProdutoService {
 
   contador = 1;
 
+  // OBSERVABLE
   constructor() { }
+  tunnedObservable = new Subject<string>();
+  emitEvent(value: string) {
+    this.tunnedObservable.next(value);
+  }
+ // OBSERVABLE
 
   getList() {
     return this.listaProduto;

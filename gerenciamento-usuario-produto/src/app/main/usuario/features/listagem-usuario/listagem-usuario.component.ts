@@ -31,6 +31,6 @@ export class ListagemUsuarioComponent implements OnInit {
   }
 
   editarUsuario(usuario: Usuario) {
-    this.route.navigateByUrl(`cadastro/${usuario.id}`)
+    this.route.navigateByUrl(`usuario/cadastro/${usuario.id}`)
   }
 }

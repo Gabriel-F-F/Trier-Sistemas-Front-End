@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoService } from '../../services/produto.service';
 import { Produto } from './../../models/produto';
 import { Component, OnInit } from '@angular/core';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-listagem-produto',
@@ -10,24 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListagemProdutoComponent implements OnInit {
 
-  listaProduto: Produto[] = [];
+ // OBSERVABLE
+  subs?: Array<Subscription> = [];
 
-  ngOnInit(): void {
-    this.atualizarLista();
-  }
+
+ // OBSERVABLE
+
+  listaProduto: Produto[] = [];
 
   constructor(
     private service: ProdutoService,
-    private route: ActivatedRoute,
     private router: Router
-  ) {
-    this.route.params.subscribe((id) => {
-      console.log(id);
-    })
-  }
+  ) { }
 
-  excluirProduto(produto: Produto) {
-    this.service.excluirUsuario(produto.id!);
+  ngOnInit(): void {
     this.atualizarLista();
   }
 
@@ -36,6 +33,11 @@ export class ListagemProdutoComponent implements OnInit {
   }
 
   editarProduto(produto: Produto) {
-    this.router.navigateByUrl(`cadastro/${produto.id}`)
+    this.router.navigateByUrl(`produto/cadastro/${produto.id}`)
+  }
+
+  excluirProduto(produto: Produto) {
+    this.service.excluirUsuario(produto.id!);
+    this.atualizarLista();
   }
 }
