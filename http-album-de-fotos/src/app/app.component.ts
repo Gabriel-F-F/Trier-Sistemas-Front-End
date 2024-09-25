@@ -28,11 +28,12 @@ export class AppComponent implements OnInit {
           album,
           photos: this.listPhotos.filter(photo => photo.albumId === album.id)
         }));
-        console.log(this.listAlbunsAndPhotos);
       });
     });
   }
 
-  showPhotos () {
+  showPhotos (album: Album) {
+    const photosInAlbum = this.listPhotos.filter(photo => photo.albumId === album.id);
+    console.log(photosInAlbum);
   }
 }

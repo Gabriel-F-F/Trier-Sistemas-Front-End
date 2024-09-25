@@ -2,11 +2,11 @@
   <header class="header">
     <h3>Álbum de Fotos</h3>
   </header>
-  <nav class="content">
+  <section class="content">
     <div class="album" *ngFor="let album of listAlbunsAndPhotos; let i = index;"
-    click="showPhotos()"
-      [ngClass]="'album-color-' + ((i % 5) + 1)">
+      [ngClass]="'album-color-' + ((i % 5) + 1)"
+      (click)="showPhotos(album.album)">
       {{ album.album.title }}
     </div>
-  </nav>
+  </section>
 </section>
