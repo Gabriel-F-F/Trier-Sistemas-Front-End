@@ -1,0 +1,43 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+  "header"
+  "content";
+}
+
+.header {
+  grid-area: header;
+  background-color: gray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.album {
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.album-color-1 { background-color: lightblue; }
+.album-color-2 { background-color: lightgreen; }
+.album-color-3 { background-color: lightcoral; }
+.album-color-4 { background-color: lightgoldenrodyellow; }
+.album-color-5 { background-color: lightgray; }
