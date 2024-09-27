@@ -13,6 +13,7 @@ export class RestauranteServiceService {
   private listaRestaurante: Array<Restaurante> = [];
 
   private apiUrl = '//localhost:8080/restaurante/adicionar';
+  private apiUrlGetAll = 'http://localhost:8080/restaurante/buscar';
 
   contador = 1;
 
@@ -28,6 +29,10 @@ export class RestauranteServiceService {
     newRestaurante.id = this.contador;
     this.listaRestaurante.push(newRestaurante);
     this.contador++;
+  }
+
+  getAllRestaurantesBD(): Observable<Restaurante[]> {
+    return this.http.get<Restaurante[]>(this.apiUrlGetAll);
   }
 
   addRestauranteBD(restaurante: Restaurante): Observable<Restaurante> {

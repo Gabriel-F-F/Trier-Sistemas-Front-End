@@ -18,16 +18,18 @@ export class ListagemRestauranteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   this.updateList();
+    this.service.getAllRestaurantesBD().subscribe(
+      (data: Restaurante[]) => {
+        this.restauranteList = data;
+      },
+      (error) => {
+        console.log("Erro ao buscar restaurante", error);
+      }
+    )
   }
 
-  updateList() {
-    this.restauranteList = this.service.getList();
-  }
-
-  restauranteDelete(restaurante: Restaurante) {
+  deleteRestaurante(restaurante: Restaurante) {
     this.service.deleteRestaurante(restaurante.id);
-    this.updateList();
   }
 
   restauranteEdit(restaurante: Restaurante) {
