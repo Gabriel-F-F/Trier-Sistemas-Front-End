@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClienteModule } from './main/cliente/cliente.module';
 import { RestauranteModule } from './main/restaurante/restaurante.module';
 import { LayoutModule } from './main/layout/layout.module';
 
@@ -13,7 +12,6 @@ import { LayoutModule } from './main/layout/layout.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ClienteModule,
     RestauranteModule,
     LayoutModule
   ],
