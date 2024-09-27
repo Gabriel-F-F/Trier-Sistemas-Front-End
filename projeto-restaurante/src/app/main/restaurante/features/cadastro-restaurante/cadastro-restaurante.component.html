@@ -1,1 +1,7 @@
-<button (click)="cadastrar()">Cadastrar Restaurante</button>
+<form [formGroup]="form" (submit)="addRestaurante()">
+  <input type="text" placeholder="Nome do Restaurante..." formControlName="nome">
+  <input type="text" placeholder="CNPJ..." formControlName="cnpj">
+  <input type="number" placeholder="Quantidade de Estrelas..." formControlName="estrelas">
+  <input type="number" placeholder="Tipo de Comida..." formControlName="tipoComida">
+  <button [disabled]="!this.form.valid" type="submit">Cadastrar</button>
+</form>

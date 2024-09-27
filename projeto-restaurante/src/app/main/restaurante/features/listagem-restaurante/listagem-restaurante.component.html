@@ -1,19 +1,21 @@
 <table border>
   <tr>
     <th>ID</th>
-    <th>Produto</th>
-    <th>Estoque</th>
-    <th>Preço</th>
+    <th>Restaurante</th>
+    <th>CNPJ</th>
+    <th>Estrelas</th>
+    <th>Tipo Comida</th>
     <th>Ações</th>
   </tr>
-  <!-- <tr *ngFor="let produto of listaProduto">
-    <td>{{ produto.id }}</td>
-    <td>{{ produto.nome }}</td>
-    <td>{{ produto.estoque }}</td>
-    <td>{{ produto.preco }}</td>
+  <tr *ngFor="let restaurante of restauranteList">
+    <td>{{ restaurante.id }}</td>
+    <td>{{ restaurante.nome }}</td>
+    <td>{{ restaurante.cnpj }}</td>
+    <td>{{ restaurante.estrelas }}</td>
+    <td>{{ restaurante.tipoComida }}</td>
     <td>
-      <button (click)="editarProduto(produto)">Editar</button>
-      <button (click)="excluirProduto(produto)">Excluir</button>
+      <button (click)="restauranteEdit(restaurante)">Editar</button>
+      <button (click)="restauranteDelete(restaurante)">Excluir</button>
     </td>
-  </tr> -->
+  </tr>
 </table>
